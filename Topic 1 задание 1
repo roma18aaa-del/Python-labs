@@ -1,0 +1,5 @@
+a = int(input("Введите делимое: "))
+b = int(input("Введите делитель (не равен 0): "))
+result = a // b
+remainder = a % b
+print(f"Число А = {a}. Результат деления на В: {result}, остаток: {remainder}.")
