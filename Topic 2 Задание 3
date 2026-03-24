@@ -1,0 +1,16 @@
+def is_triangle(a, b, c):
+    return a + b > c and a + c > b and b + c > a
+
+a = float(input("Введите сторону a: "))
+b = float(input("Введите сторону b: "))
+c = float(input("Введите сторону c: "))
+
+if not is_triangle(a, b, c):
+    print("Треугольник не существует")
+else:
+    if a == b == c:
+        print("Тип треугольника: равносторонний")
+    elif a == b or a == c or b == c:
+        print("Тип треугольника: равнобедренный")
+    else:
+        print("Тип треугольника: разносторонний")
