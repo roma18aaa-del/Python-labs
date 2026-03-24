@@ -1,0 +1,3 @@
+user_data = ("Смирнова", "Екатерина", 28, "Москва")
+surname, name, age, city = user_data
+print(f"Сотрудник: {surname} {name}, возраст: {age} лет, город: {city}")
