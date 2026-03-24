@@ -1,0 +1,22 @@
+while True:
+    try:
+        amount = float(input("Введите сумму покупки: "))
+        if amount >= 0:
+            break
+        else:
+            print("Сумма не может быть отрицательной.")
+    except ValueError:
+        print("Введите число (разделитель — точка).")
+
+if amount < 1000:
+    discount = 0
+elif amount < 3000:
+    discount = 5
+elif amount < 5000:
+    discount = 10
+else:
+    discount = 15
+
+final = amount * (1 - discount / 100)
+print(f"Скидка: {discount}%")
+print(f"Итоговая сумма: {final:.2f} руб.")
