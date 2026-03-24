@@ -1,0 +1,4 @@
+from decimal import Decimal, ROUND_HALF_UP
+rub = Decimal(input())
+usd = (rub / Decimal('95.50')).quantize(Decimal('0.01'), rounding=ROUND_HALF_UP)
+print(f"{rub:.2f} рублей = {usd} долларов")
