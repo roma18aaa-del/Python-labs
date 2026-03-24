@@ -1,0 +1,12 @@
+LOGIN = "admin"
+PASSWORD = "12345"
+
+user_login = input("Введите логин: ")
+user_pass = input("Введите пароль: ")
+
+if user_login != LOGIN:
+    print("Пользователь не найден")
+elif user_pass != PASSWORD:
+    print("Неверный пароль")
+else:
+    print("Доступ разрешён")
