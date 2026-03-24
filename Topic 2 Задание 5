@@ -1,0 +1,35 @@
+```python
+# Задание 5. Обработка команд
+while True:
+    cmd = input(">> ").strip()
+    parts = cmd.split()
+    if not parts:
+        continue
+    match parts:
+        case ["hello"]:
+            print("Привет, мир!")
+        case ["hello", name]:
+            print(f"Привет, {name}!")
+        case ["add", x, y]:
+            res = float(x) + float(y)
+            print(f"Сумма: {int(res) if res.is_integer() else res}")
+        case ["sub", x, y]:
+            res = float(x) - float(y)
+            print(f"Разность: {int(res) if res.is_integer() else res}")
+        case ["mult", x, y]:
+            res = float(x) * float(y)
+            print(f"Произведение: {int(res) if res.is_integer() else res}")
+        case ["div", x, y]:
+            try:
+                res = float(x) / float(y)
+                print(f"Частное: {int(res) if res.is_integer() else res}")
+            except ZeroDivisionError:
+                print("Ошибка: деление на ноль")
+        case ["info"]:
+            print("Доступные команды: hello, hello <имя>, add <x> <y>, sub <x> <y>, mult <x> <y>, div <x> <y>, info, exit")
+        case ["exit"]:
+            print("Программа завершена.")
+            break
+        case _:
+            print("Неизвестная команда")
+```
