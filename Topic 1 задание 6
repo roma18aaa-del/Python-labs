@@ -1,0 +1,5 @@
+data = input().split()
+name = data[0]
+age = 2026 - int(data[1])
+score = float(data[2])
+print(f"Студентка: {name}, Возраст: {age} лет, Средний балл: {score}")
