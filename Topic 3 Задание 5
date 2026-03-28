@@ -1,0 +1,19 @@
+lst = list(map(int, input("Исходный список (через пробел): ").split()))
+direction = input("Направление (влево/вправо): ")
+k = int(input("Позиций: "))
+k %= len(lst)  # чтобы не крутить лишние обороты
+
+if direction == "вправо":
+    for _ in range(k):
+        temp = lst[-1]
+        for i in range(len(lst) - 1, 0, -1):
+            lst[i] = lst[i - 1]
+        lst[0] = temp
+elif direction == "влево":
+    for _ in range(k):
+        temp = lst[0]
+        for i in range(len(lst) - 1):
+            lst[i] = lst[i + 1]
+        lst[-1] = temp
+
+print(f"Результат: {lst}")
