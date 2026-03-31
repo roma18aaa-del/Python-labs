@@ -1,0 +1,10 @@
+def task1():
+    with open('document.txt', 'r', encoding='utf-8') as f:
+        text = f.read()
+    old_word = "дождь"
+    new_word = "ливень"
+    count = text.lower().count(old_word)
+    new_text = text.replace(old_word, new_word).replace(old_word.capitalize(), new_word.capitalize())
+    with open('document_updated.txt', 'w', encoding='utf-8') as f:
+        f.write(new_text)
+    print(f"Количество заменённых слов: {count}")
