@@ -1,0 +1,17 @@
+def task2():
+    students = []
+    with open('students.txt', 'r', encoding='utf-8') as f:
+        students = [line.strip() for line in f]
+    scores = {}
+    with open('scores.txt', 'r', encoding='utf-8') as f:
+        for line in f:
+            name, score = line.strip().split(', ')
+            scores[name] = int(score)
+    total = 0
+    with open('report.txt', 'w', encoding='utf-8') as out:
+        for name in students:
+            score = scores[name]
+            total += score
+            out.write(f"{name}: {score} баллов\n")
+        avg = total / len(students)
+        out.write(f"Средний балл: {avg:.0f} баллов")
