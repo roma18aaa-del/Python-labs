@@ -1,0 +1,27 @@
+def caesar(text, shift, alphabet):
+    result = []
+    for ch in text:
+        if ch in alphabet:
+            idx = alphabet.index(ch)
+            new_idx = (idx + shift) % len(alphabet)
+            result.append(alphabet[new_idx])
+        else:
+            result.append(ch)
+    return ''.join(result)
+
+def encrypt_file(input_file, output_file, shift):
+    with open(input_file, 'r', encoding='utf-8') as f:
+        text = f.read()
+    rus_lower = 'абвгдежзийклмнопрстуфхцчшщъыьэюя'
+    rus_upper = 'АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
+    eng_lower = 'abcdefghijklmnopqrstuvwxyz'
+    eng_upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    encrypted = caesar(text, shift, rus_lower)
+    encrypted = caesar(encrypted, shift, rus_upper)
+    encrypted = caesar(encrypted, shift, eng_lower)
+    encrypted = caesar(encrypted, shift, eng_upper)
+    with open(output_file, 'w', encoding='utf-8') as f:
+        f.write(encrypted)
+
+def decrypt_file(input_file, output_file, shift):
+    encrypt_file(input_file, output_file, -shift)
