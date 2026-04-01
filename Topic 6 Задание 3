@@ -1,0 +1,10 @@
+def task3(filename='text.txt'):
+    with open(filename, 'r', encoding='utf-8') as f:
+        lines = f.readlines()
+    num_lines = len(lines)
+    num_words = sum(len(line.split()) for line in lines)
+    num_chars = sum(len(line) for line in lines)
+    print(f"Имя файла: {filename}")
+    print(f"Количество строк: {num_lines}")
+    print(f"Количество слов: {num_words}")
+    print(f"Количество символов: {num_chars}")
